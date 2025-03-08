@@ -95,7 +95,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-family: "Dancing Script", cursive;
+    font-family: 'Poppins', sans-serif;
     opacity: 0; /* Ban đầu ẩn */
     visibility: hidden; /* Ẩn khỏi luồng hiển thị */
     transition: opacity 1.5s ease-in-out, visibility 0s linear 1.5s; /* Hiệu ứng opacity và visibility */
