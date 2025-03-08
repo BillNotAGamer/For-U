@@ -1,0 +1,175 @@
+/* CSS gốc giữ nguyên, chỉ thêm phần responsive bên dưới */
+
+/* Điều chỉnh cho iPhone XR (414px width) */
+@media only screen and (max-width: 414px) {
+    /* Container chính */
+    .container {
+        flex-direction: column; /* Chuyển sang bố cục dọc */
+        height: auto;
+        padding: 10px;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên màn hình nhỏ */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .image {
+        max-width: 200px; /* Giảm kích thước ảnh */
+    }
+
+    .image.right-container {
+        grid-column: 1; /* Đặt lại về cột 1 */
+        flex-direction: column; /* Giữ xếp dọc */
+        gap: 10px;
+    }
+
+    /* Nửa bên phải (quote) */
+    .quote-container {
+        width: 100%;
+        font-size: 1.2em; /* Giảm kích thước chữ cho vừa màn hình */
+        padding: 10px;
+    }
+
+    .quote {
+        width: 90%;
+    }
+
+    /* Popup */
+    .popup {
+        top: 20%; /* Đưa popup lên cao hơn để tránh bị che */
+        width: 80%;
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    /* Box */
+    .box {
+        width: 90%; /* Chiếm gần hết chiều rộng */
+        padding: 15px;
+    }
+
+    /* Input */
+    .InputContainer {
+        width: 100%;
+        max-width: 350px; /* Giới hạn tối đa */
+    }
+
+    .input {
+        width: 95%;
+    }
+
+    /* Card container */
+    .card-container {
+        width: 80%;
+        padding: 15px;
+        font-size: 1.2em; /* Giảm kích thước chữ */
+    }
+
+    /* Music button */
+    #music-btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+/* Điều chỉnh cho iPad Pro M2 (1024px width) */
+@media only screen and (max-width: 1024px) and (min-width: 415px) {
+    /* Container chính */
+    .container {
+        flex-direction: row; /* Giữ bố cục ngang */
+        height: 100vh;
+    }
+
+    .image-wrapper {
+        width: 50%;
+        grid-template-columns: 1fr 1fr; /* Giữ 2 cột */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .image {
+        max-width: 250px; /* Kích thước lớn hơn một chút */
+    }
+
+    .image.right-container {
+        grid-column: 2;
+        gap: 15px;
+    }
+
+    /* Nửa bên phải (quote) */
+    .quote-container {
+        width: 50%;
+        font-size: 1.1em; /* Kích thước chữ phù hợp với màn hình lớn hơn */
+        padding: 15px;
+    }
+
+    .quote {
+        width: 85%;
+    }
+
+    /* Popup */
+    .popup {
+        top: 25%;
+        width: 60%;
+        font-size: 18px;
+    }
+
+    /* Box */
+    .box {
+        width: 350px; /* Tăng kích thước box */
+    }
+
+    /* Input */
+    .InputContainer {
+        width: 310px;
+    }
+
+    .input {
+        width: 300px;
+    }
+
+    /* Card container */
+    .card-container {
+        width: 70%;
+        padding: 20px;
+    }
+
+    /* Music button */
+    #music-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+/* Điều chỉnh chung cho màn hình nhỏ hơn 414px (để hỗ trợ thêm các thiết bị khác nếu cần) */
+@media only screen and (max-width: 360px) {
+    .image {
+        width: 150px;
+    }
+
+    .quote-container {
+        font-size: 1em;
+    }
+
+    .popup {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .box {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .InputContainer {
+        max-width: 250px;
+    }
+}

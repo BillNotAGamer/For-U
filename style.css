@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(214,128,255,1) 0%, rgba(102,3,111,1) 100%);
+    overflow-x: hidden; /* Ngăn cuộn ngang */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1920px; /* Giới hạn tối đa cho màn Full HD */
+    overflow: hidden;
+}
+
+.image-wrapper {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 cột đều nhau */
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 960px; /* Giới hạn chiều rộng tối đa của image-wrapper */
+}
+
+.image {
+    width: 100%;
+    max-width: 200px; /* Giảm max-width để ảnh nhỏ hơn và nằm gọn */
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 1.5s ease-in-out, transform 1s ease-in-out;
+    opacity: 1;
+    position: relative;
+}
+
+.image.right-container {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 200px; /* Đảm bảo container này cũng bị giới hạn */
+}
+
+.quote-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.7em;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #333;
+    padding: 20px;
+    max-width: 960px; /* Giới hạn chiều rộng tối đa của quote-container */
+}
+
+.quote {
+    opacity: 0;
+    position: absolute;
+    width: 80%;
+    transition: opacity 1.5s ease-in-out;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.quote.active {
+    opacity: 1;
+}
+
+.card-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    opacity: 0; /* Ban đầu ẩn */
+    visibility: hidden; /* Ẩn khỏi luồng hiển thị */
+    transition: opacity 1.5s ease-in-out, visibility 0s linear 1.5s; /* Hiệu ứng opacity và visibility */
+}
+
+.card-container.show {
+    opacity: 1; /* Hiện ra */
+    visibility: visible; /* Hiển thị */
+    transition: opacity 1.5s ease-in-out; /* Chỉ áp dụng opacity khi hiện */
+}
+
+#music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    background: pink;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    opacity: 0; /* Ban đầu ẩn */
+}
+
+/* Hiệu ứng xuất hiện */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Hiệu ứng biến mất */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+}
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+
+.indentify-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    align-items: center;
+    background: rgb(131,58,180);
+    background: linear-gradient(112deg, rgba(131,58,180,1) 0%, rgba(167,91,224,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #e1eb9b;
+    font-weight: 700;
+}
+
+.InputContainer {
+    width: 310px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  }
+
+  .input {
+    width: 280px;
+    height: 40px;
+    border: none;
+    outline: none;
+    caret-color: rgb(255, 81, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding-left: 15px;
+    letter-spacing: 0.8px;
+    color: rgb(19, 19, 19);
+    font-size: 13.4px;
+  }
+ 
